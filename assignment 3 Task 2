@@ -1,0 +1,35 @@
+co3.map <- left_join(co3, world_map, by = "region")
+
+ggplot(data = co3.map, aes(long, lat, group = group))+
+geom_polygon(aes(fill=Emissions), color = "black")+
+scale_fill_viridis_c(option = "C")+
+labs(title = "CO2 Per Capita Emissions", subtitle = "A Global Perspective", caption = "Sources: The World Bank CC BY -4.0") +
+theme(plot.title = element_text(hjust = 0.5),plot.subtitle = element_text(hjust = 0.5),plot.caption = element_text(hjust = 0, face = "italic")) +
+xlab("CO2: Tonnes per person")
+
+_______________________________________________________________
+
+par(mar = c(1, 0, 0, 0))
+plot(Bali, displaylabels=TRUE, label.cex=1, pad=0.8, label.col="chartreuse4")
+
+get.vertex.attribute(Bali,"role")
+op <- par(mar=c(0,0,0,0))
+plot(Bali,vertex.cex=2,label=rolelab, displaylabels=T,vertex.col="role")
+
+_______________________________________________________________
+
+IF ([expr_value]) < 1000 THEN
+([expr_value])
+ELSE Null
+END
+
+IF CONTAINS([function], "ASE") THEN
+[function]
+ELSE Null
+END
+
+IF CONTAINS([metabolism], "Purine biosynthesis") OR
+CONTAINS([metabolism], "Pyrimidine biosynthesis") THEN
+[metabolism]
+ELSE Null
+END
